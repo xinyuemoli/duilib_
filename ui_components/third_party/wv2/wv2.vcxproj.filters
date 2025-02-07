@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{e0496585-855c-4dbe-8bab-9bb0b4e32ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{d7bafa74-875e-4184-8b53-ea6e6eb7c724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cJSON">
+      <UniqueIdentifier>{11361bd0-5593-4a83-a8ab-9d71351d2736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\eventHandler">
+      <UniqueIdentifier>{91eab4d5-9399-4208-aed4-06c3dd6087c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cookie">
+      <UniqueIdentifier>{77b89cbf-03a6-41f7-aad3-2e81f5d7fcfa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\cwv2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wv2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wv2util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cJSON\cJSON.h">
+      <Filter>src\cJSON</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\wv2envOpts.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2envOpts.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2env.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2newWindowRequestedEventArgs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2settings.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\eventHandler\eventHandler.h">
+      <Filter>src\eventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2deferral.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cwv2webResourceResponse.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cookie\cookieManager.h">
+      <Filter>src\cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cookie\cookieList.h">
+      <Filter>src\cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cookie\cookie.h">
+      <Filter>src\cookie</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cwv2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wv2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wv2util.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cJSON\cJSON.c">
+      <Filter>src\cJSON</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cwv2envOpts.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wv2envOpts.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cwv2env.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cwv2newWindowRequestedEventArgs.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cwv2settings.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cwv2webResourceResponse.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cookie\cookieManager.cpp">
+      <Filter>src\cookie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cookie\cookieList.cpp">
+      <Filter>src\cookie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cookie\cookie.cpp">
+      <Filter>src\cookie</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wv2.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

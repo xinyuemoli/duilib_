@@ -32,6 +32,9 @@
     <Filter Include="cef_control\handler\drag">
       <UniqueIdentifier>{7747b13a-cc8c-4e86-b230-3528a4bb5752}</UniqueIdentifier>
     </Filter>
+    <Filter Include="wv2_control">
+      <UniqueIdentifier>{c5fcfd01-9468-4701-8b3c-bc02d884e49d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -100,6 +103,9 @@
     <ClInclude Include="cef_control\handler\drag\osr_dragdrop_win.h">
       <Filter>cef_control\handler\drag</Filter>
     </ClInclude>
+    <ClInclude Include="wv2_control\wv2_control.h">
+      <Filter>wv2_control</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="msgbox\msgbox.cpp">
@@ -155,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="cef_control\handler\drag\util_win.cc">
       <Filter>cef_control\handler\drag</Filter>
+    </ClCompile>
+    <ClCompile Include="wv2_control\wv2_control.cpp">
+      <Filter>wv2_control</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

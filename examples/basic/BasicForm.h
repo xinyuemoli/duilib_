@@ -22,6 +22,8 @@ public:
     /** 当窗口创建完成以后调用此函数，供子类中做一些初始化的工作
     */
     virtual void OnInitWindow() override;
+
+    virtual ui::Control* CreateControl(const DString& strClass) override;
 };
 
 #endif //EXAMPLES_BASIC_FORM_H_
