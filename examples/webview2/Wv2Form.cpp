@@ -30,7 +30,7 @@ ui::Control* Wv2Form::CreateControl(const DString& strClass)
 {
     if (strClass == L"Wv2")
     {
-        return new ui::Wv2(this);
+        return new ui::Wv2(this,NULL);
     }
 
     return BaseClass::CreateControl(strClass);

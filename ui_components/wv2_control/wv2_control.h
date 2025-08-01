@@ -8,32 +8,32 @@ namespace ui
 	class UILIB_API Wv2:public Control
 	{
 	public:
-		Wv2(ui::Window* pWindow);
+        //事件处理类
+        class UILIB_API EventHandle
+        {
+            //处理事件
+        public:
+            //历史记录改变
+            virtual void HistoryChanged(bool canGoBack, bool canGoForward);
+            //开始导航
+            virtual bool NavigationStarting(LPCWSTR uri);
+            virtual void NavigationCompleted(wv2navigationCompletedEventArgs_t args);
+            virtual void DomContentLoaded(wv2domContentLoadedEventArgs_t args);
+            virtual bool WindowCloseRequested();
+            virtual void WebMessageReceived(LPCWSTR message);
+            virtual void IsMutedChanged();
+            virtual void IsDocumentPlayingAudioChanged();
+            virtual void NewWindowRequested(wv2newWindowRequestedEventArgs_t args);
+            virtual void DocumentTitleChanged();
+            virtual void ContentLoading(wv2contentLoadingEventArgs_t args);
+            virtual void ScriptDialogOpening(wv2scriptDialogOpeningEventArgs_t args);
+            virtual void DownloadStarting(wv2downloadStartingEventArgs_t args);
+            virtual void WebResourceRequested(wv2webResourceRequestedEventArgs_t args);
+        };
+		Wv2(ui::Window* pWindow, EventHandle* handler);
 		~Wv2();
 
-		//事件处理类
-		class EventHandle
-		{
-			//处理事件
-		public:
-			//历史记录改变
-			virtual void HistoryChanged(bool canGoBack, bool canGoForward);
-			//开始导航
-			virtual bool NavigationStarting(LPCWSTR uri);
-			virtual void NavigationCompleted(wv2navigationCompletedEventArgs_t args);
-			virtual void DomContentLoaded(wv2domContentLoadedEventArgs_t args);
-			virtual bool WindowCloseRequested();
-			virtual void WebMessageReceived(LPCWSTR message);
-			virtual void IsMutedChanged();
-			virtual void IsDocumentPlayingAudioChanged();
-			virtual void NewWindowRequested(wv2newWindowRequestedEventArgs_t args);
-			virtual void DocumentTitleChanged();
-			virtual void ContentLoading(wv2contentLoadingEventArgs_t args);
-			virtual void ScriptDialogOpening(wv2scriptDialogOpeningEventArgs_t args);
-			virtual void DownloadStarting(wv2downloadStartingEventArgs_t args);
-			virtual void WebResourceRequested(wv2webResourceRequestedEventArgs_t args);
-		};
-		void SetHandler(EventHandle* handler);
+		//void SetHandler(EventHandle* handler);
 
         virtual void Init();
 		virtual void SetPos(UiRect rc) override;

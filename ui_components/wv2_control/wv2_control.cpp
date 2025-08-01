@@ -1,5 +1,7 @@
 #include "wv2_control.h"
 #include "duilib/Core/Window.h"
+#include <Shlwapi.h>
+#include <ShlObj_core.h>
 
 namespace ui
 {
@@ -62,7 +64,7 @@ namespace ui
         Wv2::g_handlers[sender]->WebResourceRequested(args);
     }
 
-    Wv2::Wv2(ui::Window* pWindow):Control(pWindow)
+    Wv2::Wv2(ui::Window* pWindow, EventHandle* handler):Control(pWindow), delegate_(handler)
     {
         options_ = wv2envOptsCreate();
     }
@@ -75,10 +77,10 @@ namespace ui
             webview_ = nullptr;
         }
     }
-    void Wv2::SetHandler(EventHandle* handler)
-    {
-        delegate_ = handler;
-    }
+    //void Wv2::SetHandler(EventHandle* handler)
+    //{
+    //    delegate_ = handler;
+    //}
     void Wv2::Init()
     {
         __super::Init();
@@ -86,7 +88,19 @@ namespace ui
         ////创建宿主窗口
         //host_wnd_ = CreateWindowW(host_wnd_cls_name_.c_str(), nullptr, UI_WNDSTYLE_DIALOG,
         //    CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, ::GetModuleHandle(NULL), this);
-        webview_ = wv2createSync2(nullptr, nullptr, options_,GetWindow()->NativeWnd()->GetHWND());
+        wchar_t currentExePath[MAX_PATH];
+        GetModuleFileNameW(nullptr, currentExePath, MAX_PATH);
+        wchar_t* currentExeName = PathFindFileNameW(currentExePath);
+
+        wchar_t dataPath[MAX_PATH];
+        if (!SUCCEEDED(
+            SHGetFolderPathW(nullptr, CSIDL_APPDATA, nullptr, 0, dataPath)))
+        {
+            return;
+        }
+        wchar_t userDataFolder[MAX_PATH];
+        PathCombineW(userDataFolder, dataPath, currentExeName);
+        webview_ = wv2createSync2(nullptr, userDataFolder, options_,GetWindow()->NativeWnd()->GetHWND());
         if (webview_)
         {
             //设置事件处理？
